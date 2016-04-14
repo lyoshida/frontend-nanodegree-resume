@@ -22,7 +22,7 @@ var bio = {
   "display": function() {
     $('#header').prepend(data(HTMLheaderName, bio.name));
     $('#name').append(data(HTMLheaderRole, bio.role));
-    $('#topContacts').append(data(HTMLmobile, bio.contacts.mobile))
+    $('#topContacts, #footerContacts').append(data(HTMLmobile, bio.contacts.mobile))
                      .append(data(HTMLemail, bio.contacts.email))
                      .append(data(HTMLgithub, bio.contacts.github))
                      .append(data(HTMLlocation, bio.contacts.location));
@@ -31,7 +31,7 @@ var bio = {
                 .append(HTMLskillsStart);
 
     $.each(bio.skills, function(index, value) {
-      $('#header').append(data(HTMLskills, value));
+      $('#skills').append(data(HTMLskills, value));
     });
   }
 };
@@ -116,28 +116,28 @@ var education = {
 }
 
 var projects = {
-"projects": [
-  {
-    "title": "Project 1",
-    "dates": "2015",
-    "description": "description",
-    "images": [
+  "projects": [
+    {
+      "title": "Project 1",
+      "dates": "2015",
+      "description": "description",
+      "images": [
 
-    ]
-  }
-],
-"display": function() {
-  $.each(projects.projects, function(index, project) {
-    $('#projects').append(HTMLprojectStart);
-    $('.project-entry:last').append(data(HTMLprojectTitle, project.title))
-                       .append(data(HTMLprojectDates, project.dates))
-                       .append(data(HTMLprojectDescription, project.description));
-    $.each(project.images, function(index, image) {
-      $('.project-entry').append(data(HTMLprojectImage, image));
+      ]
+    }
+  ],
+  "display": function() {
+    $.each(projects.projects, function(index, project) {
+      $('#projects').append(HTMLprojectStart);
+      $('.project-entry:last').append(data(HTMLprojectTitle, project.title))
+                         .append(data(HTMLprojectDates, project.dates))
+                         .append(data(HTMLprojectDescription, project.description));
+      $.each(project.images, function(index, image) {
+        $('.project-entry').append(data(HTMLprojectImage, image));
+      });
+
     });
-
-  });
-}
+  }
 }
 
 
