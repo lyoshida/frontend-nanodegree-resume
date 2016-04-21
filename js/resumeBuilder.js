@@ -28,6 +28,7 @@ var bio = {
                      .append(data(HTMLlocation, bio.contacts.location));
 
     $('#header').append(data(HTMLbioPic, bio.biopic))
+                .append(data(HTMLwelcomeMsg, bio.welcomeMessage))
                 .append(HTMLskillsStart);
 
     $.each(bio.skills, function(index, value) {
